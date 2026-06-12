@@ -1,0 +1,7 @@
+node_modules/
+/server/node_modules/
+.env
+.env.local
+db/database.sqlite
+/.vscode/
+.DS_Store
