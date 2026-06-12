@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Food Wastage - Donor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<div class="topbar">
+				<h1>Food Donation — Donor Portal</h1>
+				<nav>
+					<button data-view="home">Home</button>
+					<button data-view="dashboard">Dashboard</button>
+					<button data-view="register">Register</button>
+					<button data-view="login">Login</button>
+					<button data-view="about">About</button>
+					<button data-view="faq">FAQ</button>
+					<button id="logoutBtn" style="display:none">Logout</button>
+				</nav>
+			</div>
+			<p class="lead">Create and manage food donation offers to reduce waste.</p>
+		</header>
+
+		<main class="container">
+			<section id="home" class="view">
+				<h2>Welcome</h2>
+				<p>This prototype lets donors/restaurants create offers. The app will suggest nearby NGOs to accept the food.</p>
+			</section>
+
+			<section id="register" class="view" style="display:none">
+				<h2>Register</h2>
+				<form id="registerForm">
+					<label>Name<input type="text" id="regName" required /></label>
+					<label>Email<input type="email" id="regEmail" required /></label>
+					<label>Password<input type="password" id="regPass" required /></label>
+					<label>Role
+						<select id="regRole">
+							<option value="donor">Donor / Restaurant</option>
+							<option value="ngo">NGO</option>
+						</select>
+					</label>
+					<div class="form-actions"><button type="submit">Register</button></div>
+				</form>
+			</section>
+
+			<section id="login" class="view" style="display:none">
+				<h2>Login</h2>
+				<form id="loginForm">
+					<label>Email<input type="email" id="loginEmail" required /></label>
+					<label>Password<input type="password" id="loginPass" required /></label>
+					<div class="form-actions"><button type="submit">Login</button></div>
+				</form>
+			</section>
+
+			<section id="dashboard" class="view" style="display:none">
+				<h2>Dashboard</h2>
+				<div id="userInfo" class="small"></div>
+
+				<div class="create-offer">
+					<h3>Create Offer</h3>
+					<form id="offerForm">
+						<label>Item name<input type="text" id="itemName" required maxlength="100" /></label>
+						<label>Quantity/Portions<input type="number" id="quantity" required min="1" /></label>
+						<label>Pickup instructions<input type="text" id="pickup" maxlength="200" /></label>
+						<label>Location (lat)<input type="number" id="lat" step="any" /></label>
+						<label>Location (lon)<input type="number" id="lon" step="any" /></label>
+						<button type="button" id="geoBtn">Use my location</button>
+						<label>Expiry<input type="datetime-local" id="expiry" /></label>
+						<label>Photo URL<input type="url" id="photo" placeholder="https://..." /></label>
+						<div class="form-actions"><button type="submit">Create Offer</button></div>
+					</form>
+				</div>
+
+				<div class="offers-list">
+					<h3>Your Offers</h3>
+					<div id="offers"></div>
+				</div>
+
+				<div class="suggestions">
+					<h3>Suggested NGOs</h3>
+					<div id="ngos"></div>
+				</div>
+			</section>
+
+			<section id="about" class="view" style="display:none">
+				<h2>About Us</h2>
+				<p>We connect donors and restaurants to NGOs to reduce food waste.</p>
+			</section>
+
+			<section id="faq" class="view" style="display:none">
+				<h2>FAQ</h2>
+				<ul>
+					<li>How does this work? Create an offer; the site suggests nearest NGOs.</li>
+					<li>Is this production-ready? No — it's a client-side prototype for demos.</li>
+				</ul>
+			</section>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>
