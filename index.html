@@ -13,6 +13,7 @@
 				<nav>
 					<button data-view="home">Home</button>
 					<button data-view="dashboard">Dashboard</button>
+						<button data-view="receiver">Receiver</button>
 					<button data-view="register">Register</button>
 					<button data-view="login">Login</button>
 					<button data-view="about">About</button>
@@ -52,6 +53,9 @@
 					<label>Password<input type="password" id="loginPass" required /></label>
 					<div class="form-actions"><button type="submit">Login</button></div>
 				</form>
+				<div style="margin-top:10px">
+					<button id="googleLogin">Login with Google</button>
+				</div>
 			</section>
 
 			<section id="dashboard" class="view" style="display:none">
@@ -81,6 +85,15 @@
 				<div class="suggestions">
 					<h3>Suggested NGOs</h3>
 					<div id="ngos"></div>
+				</div>
+			</section>
+
+			<section id="receiver" class="view" style="display:none">
+				<h2>Receiver / NGO Portal</h2>
+				<p>Browse available offers and accept ones you can collect.</p>
+				<div class="offers-list">
+					<h3>Available Offers</h3>
+					<div id="receiverOffers"></div>
 				</div>
 			</section>
 

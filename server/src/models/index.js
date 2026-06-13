@@ -9,5 +9,6 @@ const sequelize = new Sequelize({
 
 const User = require('./user')(sequelize);
 const NGO = require('./ngo')(sequelize);
+const Offer = require('./offer')(sequelize);
 
-module.exports = { sequelize, User, NGO };
+module.exports = { sequelize, User, NGO, Offer };

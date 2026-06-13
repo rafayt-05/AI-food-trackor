@@ -5,6 +5,7 @@ const cors = require('cors');
 const { sequelize } = require('./models');
 const authRoutes = require('./routes/auth');
 const ngoRoutes = require('./routes/ngo');
+const offersRoutes = require('./routes/offers');
 const http = require('http');
 const { Server } = require('socket.io');
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/ngos', ngoRoutes);
+app.use('/api/offers', offersRoutes);
 
 io.on('connection', (socket) => {
   console.log('socket connected', socket.id);
